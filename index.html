@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Personal Fight</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+
+            min-height: 100vh;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            color: white;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(0, 0, 0, 0.50),
+                    rgba(0, 0, 0, 0.75)
+                ),
+
+                url("./fundo.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-repeat: no-repeat;
+
+            background-attachment: fixed;
+
+        }
+
+
+        /* PÁGINA */
+
+        .pagina {
+
+            width: 100%;
+
+            min-height: 100vh;
+
+            padding: 35px 20px 50px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+        }
+
+
+        /* TÍTULO */
+
+        .titulo {
+
+            font-size: 60px;
+
+            font-weight: 900;
+
+            text-align: center;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 25px;
+
+            text-shadow:
+
+                3px 3px 12px black;
+
+        }
+
+
+        /* BIOGRAFIA */
+
+        .biografia {
+
+            width: 100%;
+
+            max-width: 850px;
+
+            padding: 25px;
+
+            background: rgba(0, 0, 0, 0.82);
+
+            border-radius: 20px;
+
+            border: 1px solid rgba(255,255,255,0.35);
+
+            text-align: center;
+
+            font-size: 19px;
+
+            line-height: 1.6;
+
+            box-shadow:
+
+                0 10px 30px rgba(0,0,0,0.6);
+
+            margin-bottom: 20px;
+
+        }
+
+
+        /* WHATSAPP */
+
+        .whatsapp {
+
+            display: inline-block;
+
+            padding: 15px 25px;
+
+            margin-bottom: 30px;
+
+            background: #25D366;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 19px;
+
+            font-weight: bold;
+
+            border-radius: 12px;
+
+            border: 2px solid white;
+
+            box-shadow:
+
+                0 5px 20px rgba(0,0,0,0.6);
+
+            transition: 0.3s;
+
+        }
+
+
+        .whatsapp:hover {
+
+            background: #1ebe5d;
+
+            transform: scale(1.05);
+
+        }
+
+
+        /* CARROSSEL */
+
+        .carrossel {
+
+            width: 100%;
+
+            max-width: 750px;
+
+            height: 400px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 22px;
+
+            border: 2px solid white;
+
+            box-shadow:
+
+                0 10px 40px rgba(0,0,0,0.7);
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .carrossel img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            position: absolute;
+
+            inset: 0;
+
+            opacity: 0;
+
+            transition: opacity 1s ease;
+
+        }
+
+
+        .carrossel img.ativa {
+
+            opacity: 1;
+
+        }
+
+
+        /* INFORMAÇÕES */
+
+        .informacoes {
+
+            width: 100%;
+
+            max-width: 1000px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+
+        }
+
+
+        /* BLOCOS */
+
+        .bloco {
+
+            background: rgba(0, 0, 0, 0.84);
+
+            padding: 25px;
+
+            border-radius: 18px;
+
+            border: 1px solid rgba(255,255,255,0.3);
+
+            box-shadow:
+
+                0 8px 25px rgba(0,0,0,0.55);
+
+        }
+
+
+        .bloco h2 {
+
+            text-align: center;
+
+            font-size: 22px;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        /* ITENS */
+
+        .itens {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 10px;
+
+        }
+
+
+        .item {
+
+            padding: 11px 15px;
+
+            background: rgba(255,255,255,0.13);
+
+            border: 1px solid rgba(255,255,255,0.3);
+
+            border-radius: 10px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            text-align: center;
+
+        }
+
+
+        /* RODAPÉ */
+
+        .rodape {
+
+            margin-top: 30px;
+
+            font-size: 14px;
+
+            opacity: 0.8;
+
+        }
+
+
+        /* CELULAR */
+
+        @media (max-width: 700px) {
+
+            .pagina {
+
+                padding: 25px 15px 40px;
+
+            }
+
+
+            .titulo {
+
+                font-size: 40px;
+
+                letter-spacing: 2px;
+
+            }
+
+
+            .biografia {
+
+                font-size: 17px;
+
+                padding: 20px;
+
+            }
+
+
+            .carrossel {
+
+                height: 300px;
+
+            }
+
+
+            .informacoes {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .bloco h2 {
+
+                font-size: 20px;
+
+            }
+
+
+            .item {
+
+                font-size: 15px;
+
+                padding: 10px 13px;
+
+            }
+
+
+            .whatsapp {
+
+                font-size: 17px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <main class="pagina">
+
+
+        <!-- TÍTULO -->
+
+        <h1 class="titulo">
+
+            PERSONAL FIGHT
+
+        </h1>
+
+
+        <!-- BIOGRAFIA -->
+
+        <section class="biografia">
+
+            Sou Rafael, ex-lutador profissional de MMA,
+            atleta do Corinthians e da Lotus MMA.
+
+            <br><br>
+
+            Sofri um acidente que reduziu minha qualidade de luta.
+            Hoje em dia sou professor.
+
+            Ensino pessoas a se defender,
+            ajudo a perder peso,
+            desestressar
+            e praticar um novo hobby.
+
+        </section>
+
+
+        <!-- WHATSAPP -->
+
+        <a
+
+            class="whatsapp"
+
+            href="https://wa.me/5511970218569?text=Ol%C3%A1%20Rafael%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20aulas"
+
+            target="_blank">
+
+            💬 FALAR COM RAFAEL NO WHATSAPP
+
+        </a>
+
+
+        <!-- CARROSSEL -->
+
+        <div class="carrossel">
+
+
+            <img
+
+                src="./foto1.jpg"
+
+                class="ativa"
+
+                alt="Personal Fight">
+
+
+            <img
+
+                src="./foto2.jpg"
+
+                alt="Personal Fight">
+
+
+            <img
+
+                src="./foto3.jpg"
+
+                alt="Personal Fight">
+
+
+            <img
+
+                src="./foto4.jpg"
+
+                alt="Personal Fight">
+
+
+        </div>
+
+
+        <!-- INFORMAÇÕES -->
+
+        <div class="informacoes">
+
+
+            <!-- HORÁRIOS -->
+
+            <section class="bloco">
+
+                <h2>
+
+                    ⏰ HORÁRIOS DISPONÍVEIS
+
+                </h2>
+
+                <div class="itens">
+
+                    <span class="item">06:00</span>
+
+                    <span class="item">07:00</span>
+
+                    <span class="item">08:00</span>
+
+                    <span class="item">09:00</span>
+
+                    <span class="item">15:00</span>
+
+                    <span class="item">20:00</span>
+
+                </div>
+
+            </section>
+
+
+            <!-- DIAS -->
+
+            <section class="bloco">
+
+                <h2>
+
+                    📅 DIAS DISPONÍVEIS
+
+                </h2>
+
+                <div class="itens">
+
+                    <span class="item">Segunda</span>
+
+                    <span class="item">Terça</span>
+
+                    <span class="item">Quinta</span>
+
+                    <span class="item">Sexta</span>
+
+                </div>
+
+            </section>
+
+
+            <!-- EQUIPAMENTOS -->
+
+            <section class="bloco">
+
+                <h2>
+
+                    🥊 O QUE PRECISO PARA TREINAR?
+
+                </h2>
+
+                <div class="itens">
+
+                    <span class="item">
+
+                        Bandagem
+
+                    </span>
+
+                    <span class="item">
+
+                        Luva
+
+                    </span>
+
+                    <span class="item">
+
+                        Para iniciarmos
+
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- ESPAÇOS -->
+
+            <section class="bloco">
+
+                <h2>
+
+                    📍 QUE ESPAÇO POSSO TREINAR?
+
+                </h2>
+
+                <div class="itens">
+
+                    <span class="item">Piscina</span>
+
+                    <span class="item">Quadra</span>
+
+                    <span class="item">Praça</span>
+
+                    <span class="item">Garagem</span>
+
+                    <span class="item">Quintal</span>
+
+                    <span class="item">Espaço livre 5×5</span>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+        <!-- RODAPÉ -->
+
+        <div class="rodape">
+
+            PERSONAL FIGHT • TREINAMENTO PERSONALIZADO
+
+        </div>
+
+
+    </main>
+
+
+    <!-- CARROSSEL AUTOMÁTICO -->
+
+    <script>
+
+        const fotos =
+            document.querySelectorAll(".carrossel img");
+
+        let fotoAtual = 0;
+
+
+        function trocarFoto() {
+
+            fotos[fotoAtual].classList.remove("ativa");
+
+
+            fotoAtual++;
+
+
+            if (fotoAtual >= fotos.length) {
+
+                fotoAtual = 0;
+
+            }
+
+
+            fotos[fotoAtual].classList.add("ativa");
+
+        }
+
+
+        setInterval(trocarFoto, 3000);
+
+    </script>
+
+
+</body>
+
+</html>
